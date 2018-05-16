@@ -15,7 +15,12 @@
           <target>1.7</target>
         </configuration>
       </plugin>
-      <plugin>
+    <plugin>
+   <groupId>org.codehaus.mojo</groupId>
+   <artifactId>sonar-maven-plugin</artifactId>
+   <version>2.6</version>
+    </plugin>
+    <plugin>
         <artifactId>maven-war-plugin</artifactId>
         <version>2.6</version>
         <configuration>
@@ -23,7 +28,7 @@
           <failOnMissingWebXml>false</failOnMissingWebXml>
         </configuration>
       </plugin>
-    </plugins>
+        </plugins>
   </build>
   <dependencies>
   	<dependency>
