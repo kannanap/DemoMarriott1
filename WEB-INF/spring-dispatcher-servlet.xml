@@ -1,0 +1,37 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:mvc="http://www.springframework.org/schema/mvc" 
+		xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="
+        http://www.springframework.org/schema/beans    
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+ 
+		<context:component-scan base-package="org.thothlab.devilsvault.controllers"/>
+		
+		<bean id="customAuthenticationSuccessHandler" class="org.thothlab.devilsvault.controllers.security.CustomAuthenticationSuccessHandler"></bean>
+		<bean id="bcryptEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
+		
+		<context:property-placeholder location="classpath:jdbc/config/database.properties"/>
+		
+		<bean id="securitydataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+			<property name="driverClassName" value="${database.driver}" />
+			<property name="url" value="${database.url}" />
+			<property name="username" value="${database.user}" />
+			<property name="password" value="${database.password}" />
+		</bean>
+		 
+		<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+			<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+			<property name="prefix" value="/WEB-INF/" />
+			<property name="suffix" value=".jsp" />
+		</bean>
+		
+		<mvc:resources mapping="/resources/**" location="/resources/" cache-period="31556926"/>
+		
+		<mvc:annotation-driven />
+ 
+</beans>	  
