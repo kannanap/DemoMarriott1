@@ -116,6 +116,15 @@
     <artifactId>servlet-api</artifactId>
     <version>2.5</version>
 </dependency>
-	
+<properties>
+<!-- Optional URL to server. Default value is http://localhost:9000 -->
+<sonar.host.url>http://ec2-13-127-213-254.ap-south-1.compute.amazonaws.com:9000</sonar.host.url>
+<sonar.jdbc.username>admin</sonar.jdbc.username>
+<sonar.jdbc.password>admin</sonar.jdbc.password>
+</properties>
+
+	  
+	  
+	  
   </dependencies>
 </project>
