@@ -127,10 +127,5 @@
 <sonar.jdbc.username>admin</sonar.jdbc.username>
 <sonar.jdbc.password>admin</sonar.jdbc.password>
 </dependency>
-	  
-
-	  
-	  
-	  
   </dependencies>
 </project>
